@@ -1,91 +1,81 @@
-DROP database socialMedia;
-CREATE database socialMedia;
+DROP database socialmedia;
+CREATE database socialmedia;
 
-\c socialMedia
+\c socialmedia
 
-CREATE TABLE User
+--User is reserved word
+CREATE TABLE User_Detail
 (
-    UserID INT NOT NULL,
+    UserID INT UNIQUE NOT NULL,
     Fname VARCHAR(50) NOT NULL,
     Lname VARCHAR(30) NOT NULL,
     School VARCHAR(100),
     Username VARCHAR(15) UNIQUE NOT NULL,
-    Email VARCHAR(30) NOT NULL,
+    Email VARCHAR(30) UNIQUE NOT NULL,
     Location VARCHAR(30),
     Phone INT,
-    DOB DATE,
-    GENDER VARCHAR(6),
-    PRIMARY KEY (UserID),
+    DOB DATE CHECK (DOB > '2011-01-01'),  --age restriction 10+
+    Friends TEXT [],
+    GENDER VARCHAR(15),
+    PRIMARY KEY (UserID)
 );
 
-CREATE TABLE UserAuth
-(
-    UserID INT,
-    UserName, --Foreign Keys?
-    Email,
-    Pwd VARCHAR(12), --Add constraints for password ex. combo of caps, special chars, no.
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
-);
-
-CREATE TABLE Friends
-(
-    UserID INT,
-    FriendID,  --Isn't the friendID and UserID same? cuz friends are also users(recursive)
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
-);
-
+--Are we adding hyperlinks or defining BLOB Datatype? (TEXT can be used for large string values)
 CREATE TABLE Pages
 (
-    PageID INT NOT NULL,
+    PageID INT UNIQUE NOT NULL,
     PageName VARCHAR(50) NOT NULL,
-    PageContent VARCHAR(256), --Are we adding hyperlinks or defining BLOB Datatype?
-    PRIMARY KEY(PageID),
+    PageContent TEXT,
+    PRIMARY KEY(PageID)
 );
 
 CREATE TABLE Posts 
 (
-    PostID INT NOT NULL,
-    PostDate DATE,
-    PostContent, -- BLOB or varchar?
+    PostID INT UNIQUE NOT NULL,
+    PostDate TIMESTAMP ,
+    PostContent TEXT, -- BLOB or varchar?
     UserID INT,
     PRIMARY KEY(PostID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
 );
 
 CREATE TABLE PostLikes
 (
-    PostID INT,
-    UserID INT,
+    PostID INT NOT NULL,
+    UserID INT NOT NULL,
+    Like_Count INT NOT NULL DEFAULT 0,
+    PRIMARY KEY (PostID),
     FOREIGN KEY (PostID) REFERENCES Posts(PostID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
 );
 
+-- What datatype? There is no blob in postgresql (instead BYTEA) 
 CREATE TABLE Photos
 (
     PhotoID INT UNIQUE NOT NULL,
-    ImgContent, -- What datatype?
-    PostID INT,
+    ImgContent BYTEA, 
+    PostID INT NOT NULL,
     PRIMARY KEY(PhotoID),
-    FOREIGN KEY (PostID) REFERENCES Posts(PostID),
-),
+    FOREIGN KEY (PostID) REFERENCES Posts(PostID)
+);
 
 Create TABLE Shares
 (
-    PostID INT,
-    USERID INT,
+    PostID INT NOT NULL,
+    USERID INT NOT NULL,
+    PRIMARY KEY (PostID),
     FOREIGN KEY (PostID) REFERENCES Posts(PostID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
 );
 
 CREATE TABLE Comments
 (
     CommentID INT UNIQUE NOT NULL,
-    UserID INT,
-    PostId INT,
+    UserID INT NOT NULL,
+    PostId INT NOT NULL,
     CommentContent VARCHAR(200),
-    CommentDate DATE,
+    CommentDate TIMESTAMP,
     PRIMARY KEY(CommentID),
     FOREIGN KEY (PostID) REFERENCES Posts(PostID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
 );
-
