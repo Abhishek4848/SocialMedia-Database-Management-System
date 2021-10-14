@@ -14,10 +14,24 @@ CREATE TABLE User_Detail
     Email VARCHAR(30) UNIQUE NOT NULL,
     Location VARCHAR(30),
     Phone INT,
-    DOB DATE CHECK (DOB > '2011-01-01'),  --age restriction 10+
+    DOB DATE CHECK (DOB < '2011-01-01'),  --age restriction 10+
     Friends TEXT [],
     GENDER VARCHAR(15),
     PRIMARY KEY (UserID)
+);
+
+--Table for user authentication
+CREATE TABLE UserAuth
+(
+    UserID INT UNIQUE NOT NULL,
+    Uname VARCHAR(15),
+    Email VARCHAR(30) UNIQUE NOT NULL,
+    Pwd VARCHAR(12) CHECK(length(Pwd) >= 6),
+    PRIMARY KEY (UserID),
+    FOREIGN KEY (UserID) REFERENCES User_Detail(UserID),
+    FOREIGN KEY (Uname) REFERENCES User_Detail(Username),
+    FOREIGN KEY (Email) REFERENCES User_Detail(Email)
+
 );
 
 --Are we adding hyperlinks or defining BLOB Datatype? (TEXT can be used for large string values)
@@ -63,6 +77,8 @@ Create TABLE Shares
 (
     PostID INT NOT NULL,
     USERID INT NOT NULL,
+    Share_time TIMESTAMP,
+    Share_Count INT DEFAULT 0,
     PRIMARY KEY (PostID),
     FOREIGN KEY (PostID) REFERENCES Posts(PostID),
     FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
