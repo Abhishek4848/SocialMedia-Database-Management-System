@@ -52,6 +52,14 @@ INSERT INTO Posts VALUES(9,current_timestamp,'Meme',3);
 INSERT INTO PostLikes VALUES(3,3,10);
 INSERT INTO PostLikes VALUES(2,2,4);
 INSERT INTO PostLikes VALUES(1,3);
+INSERT INTO PostLikes VALUES(9,5,100);
+INSERT INTO PostLikes VALUES(8,2,1);
+INSERT INTO PostLikes VALUES(7,1,113);
+INSERT INTO PostLikes VALUES(7,2,4);
+INSERT INTO PostLikes VALUES(7,4,10);
+INSERT INTO PostLikes VALUES(5,8,12);
+INSERT INTO PostLikes VALUES(4,7,2);
+INSERT INTO PostLikes VALUES(4,6,0);
 
 --INSERT INTO PHOTOS (please make sure you have these files in your current directory)
 INSERT INTO Photos VALUES(1,bytea('./test1.png'),2);
@@ -64,11 +72,24 @@ INSERT INTO Photos VALUES(7,bytea('./test7.png'),5);
 INSERT INTO Photos VALUES(8,bytea('./test8.svg'),3);
 
 --INSERT INTO SHARE
-INSERT INTO Shares VALUES (1,2,current_timestamp);
+INSERT INTO Shares VALUES (1,8,current_timestamp);
+INSERT INTO Shares VALUES (3,7,current_timestamp);
+INSERT INTO Shares VALUES (4,5,current_timestamp);
+INSERT INTO Shares VALUES (7,5,current_timestamp);
+INSERT INTO Shares VALUES (6,1,current_timestamp);
+INSERT INTO Shares VALUES (8,8,current_timestamp);
+INSERT INTO Shares VALUES (8,4,current_timestamp);
 INSERT INTO Shares VALUES (3,2,current_timestamp);
+INSERT INTO Shares VALUES (5,2,current_timestamp);
 
 
 --INSERT INTO COMMENTS
 INSERT INTO COMMENTS VALUES(1,2,1,'This is a test comment',current_timestamp);
 INSERT INTO COMMENTS VALUES(2,2,3,'great content',current_timestamp);
-INSERT INTO COMMENTS VALUES(3,1,3,'awesome content',current_timestamp);
+INSERT INTO COMMENTS VALUES(3,8,7,'awesome content',current_timestamp);
+INSERT INTO COMMENTS VALUES(4,7,1,'GG',current_timestamp);
+INSERT INTO COMMENTS VALUES(5,6,3,'LoL',current_timestamp);
+INSERT INTO COMMENTS VALUES(6,4,6,'Great work',current_timestamp);
+INSERT INTO COMMENTS VALUES(7,7,1,'Well done',current_timestamp);
+INSERT INTO COMMENTS VALUES(8,5,8,'great content',current_timestamp);
+INSERT INTO COMMENTS VALUES(9,5,4,'All the Best',current_timestamp);
