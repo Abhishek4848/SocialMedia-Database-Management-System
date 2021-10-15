@@ -7,16 +7,35 @@ INSERT INTO User_Detail VALUES (2,'Jane','Bosco','Brian convent','jan101','jbosc
 UPDATE user_detail SET friends = array_append(friends,'2') WHERE fname='John';
 
 INSERT INTO User_Detail VALUES (3,'Mike','Tyson','lulwa convent','themike','tyson@test.com','3 dark avenue',445533,'2002-07-01',ARRAY ['2'],'male');
+INSERT INTO User_Detail VALUES (4,'Jett','sage','public convent','jet101','jet12@test.com','5 dark alley',118822,'2000-05-01', NULL,'female');
+INSERT INTO User_Detail VALUES (5,'Sova','archer','private convent','sov101','sova@test.com','10 square block',997766,'2002-07-01',NULL,'male');
+INSERT INTO User_Detail VALUES (6,'Thor','odinson','asgard public','thor101','thor@test.com','12 square block',776611,'2001-04-04',NULL,'male');
+INSERT INTO User_Detail VALUES (7,'Loki','brian','asgard public','loki101','loki@test.com','11 diamond block',887755,'2002-07-08',NULL,'male');
+INSERT INTO User_Detail VALUES (8,'James','bond','spy public','jb101','bond@test.com','11 secret block',991133,'2001-07-07',NULL,'male');
+
 
 --INSERT INTO USER AUTH
 INSERT INTO UserAuth VALUES(1,'jd101','johndoe@test.com','johnd12!@');
 INSERT INTO UserAuth VALUES(2,'jan101','jbosco@test.com','jand12!@');
 INSERT INTO UserAuth VALUES(3,'themike','tyson@test.com','mikey12!@');
+INSERT INTO UserAuth VALUES(4,'jet101','jet12@test.com','jet12!@');
+INSERT INTO UserAuth VALUES(5,'sov101','sova@test.com','sova12!@');
+INSERT INTO UserAuth VALUES(6,'thor101','thor@test.com','thor12!@');
+INSERT INTO UserAuth VALUES(7,'loki101','loki@test.com','loki12!@');
+INSERT INTO UserAuth VALUES(8,'jb101','bond@test.com','bond12!@');
+
 
 
 --INSERT INTO PAGES
 INSERT INTO Pages VALUES(1,'Memes','This is a page for all memes');
 INSERT INTO Pages VALUES(2,'Tech','This is a page for all tech related stuff');
+INSERT INTO Pages VALUES(3,'news','This is a page for all lates news');
+INSERT INTO Pages VALUES(4,'Iphone','This is a page for all apple iphone related stuff');
+INSERT INTO Pages VALUES(5,'Covid','This is a page for all covid related stuff');
+INSERT INTO Pages VALUES(6,'Fashion','This is a page for all fashion related stuff');
+INSERT INTO Pages VALUES(7,'coding','This is a page for all coding related stuff');
+INSERT INTO Pages VALUES(8,'Climate','This is a page for all climate change related stuff');
+
 
 --INSERT INTO POSTS
 INSERT INTO Posts VALUES(1,current_timestamp,'This is a random post by me',3);
