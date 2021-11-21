@@ -1,0 +1,9 @@
+userID,fname,lname,school,username,email,location,Mobile No.,dob,Friends,Sex
+2,Jane,Jane,Brian convent,jan101,jbosco@test.com,8 square block,887766,2000-07-01,"{1,3}",female
+1,John,John,Brooks valley,jd101,johndoe@test.com,4 square block,995544,2001-01-01,{2},male
+3,Mike,Mike,lulwa convent,themike,tyson@test.com,3 dark avenue,445533,2002-07-01,{2},male
+4,Jett,Jett,public convent,jet101,jet12@test.com,5 dark alley,118822,2000-05-01,,female
+5,Sova,Sova,private convent,sov101,sova@test.com,10 square block,997766,2002-07-01,,male
+6,Thor,Thor,asgard public,thor101,thor@test.com,12 square block,776611,2001-04-04,,male
+7,Loki,Loki,asgard public,loki101,loki@test.com,11 diamond block,887755,2002-07-08,,male
+8,James,James,spy public,jb101,bond@test.com,11 secret block,991133,2001-07-07,,male
