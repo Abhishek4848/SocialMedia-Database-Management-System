@@ -63,7 +63,7 @@ CREATE TABLE PostLikes
     FOREIGN KEY (UserID) REFERENCES User_Detail(UserID)
 );
 
--- What datatype? There is no blob in postgresql (instead BYTEA) 
+--There is no blob in postgresql (instead BYTEA) 
 CREATE TABLE Photos
 (
     PhotoID INT UNIQUE NOT NULL,
