@@ -62,14 +62,15 @@ INSERT INTO PostLikes VALUES(4,7,2);
 INSERT INTO PostLikes VALUES(4,6,0);
 
 --INSERT INTO PHOTOS (please make sure you have these files in your current directory)
-INSERT INTO Photos VALUES(1,bytea('./test1.png'),2);
-INSERT INTO Photos VALUES(2,bytea('./test2.svg'),1);
-INSERT INTO Photos VALUES(3,bytea('./test3.png'),8);
-INSERT INTO Photos VALUES(4,bytea('./test4.svg'),7);
-INSERT INTO Photos VALUES(5,bytea('./test5.png'),6);
-INSERT INTO Photos VALUES(6,bytea('./test6.svg'),6);
-INSERT INTO Photos VALUES(7,bytea('./test7.png'),5);
-INSERT INTO Photos VALUES(8,bytea('./test8.svg'),3);
+INSERT INTO Photos VALUES(1,bytea('../images/test1.png'),2,current_timestamp);
+INSERT INTO Photos VALUES(2,bytea('../images/test2.png'),1,current_timestamp);
+INSERT INTO Photos VALUES(3,bytea('../images/test3.png'),8,current_timestamp);
+INSERT INTO Photos VALUES(4,bytea('../images/test4.png'),7,current_timestamp);
+INSERT INTO Photos VALUES(5,bytea('../images/test5.png'),6,current_timestamp);
+INSERT INTO Photos VALUES(6,bytea('../images/test6.png'),6,current_timestamp);
+INSERT INTO Photos VALUES(7,bytea('../images/test7.png'),5,current_timestamp);
+INSERT INTO Photos VALUES(8,bytea('../images/test8.png'),3,current_timestamp);
+
 
 --INSERT INTO SHARE
 INSERT INTO Shares VALUES (1,8,current_timestamp);
