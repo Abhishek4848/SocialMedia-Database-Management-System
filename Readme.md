@@ -1,7 +1,7 @@
 # Links
 
 Report 1: https://docs.google.com/document/d/1ov3YjVuwB9KfY4vxj_0E-P2YaUcDKx2NFp9UseB95SM/edit?usp=sharing <br />
-Report 2: https://docs.google.com/document/d/1ApRKfaPROaCk88JFqEde171ttqG157MydOWKAJAn7EA/edit <br />
+Report 2: https://drive.google.com/file/d/1JF8YCMC9E9OZZUdeZZ4ltO1rNIb_D6-1/view?usp=sharing <br />
 Report 3: https://docs.google.com/document/d/1A2qe4ZI1t_kaSDaee_ShQNKi8nEwejIdSHktpijj9tY/edit <br />
 Report 4: https://docs.google.com/document/d/1ApRKfaPROaCk88JFqEde171ttqG157MydOWKAJAn7EA/edit <br />
 
